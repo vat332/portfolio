@@ -1,7 +1,7 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projekty", link: "#projects" },
-  { name: "Klienci", link: "#testimonials" },
+  { name: "Technologie", link: "#technologies" },
   { name: "Kontakt", link: "#contact" },
 ];
 
@@ -92,5 +92,32 @@ export const projects = [
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://apple-website-ten-olive.vercel.app/",
+  },
+];
+
+export const technologies = [
+  {
+    quote:
+      "Next.js to zaawansowany framework oparty na React, który umożliwia serwerowe renderowanie stron, generowanie statycznych witryn oraz błyskawiczne ładowanie. Doskonały wybór do tworzenia nowoczesnych aplikacji webowych z naciskiem na SEO i wydajność.",
+    name: "Next.js",
+    title: "Framework Reacta do SSR i SSG",
+  },
+  {
+    quote:
+      "React to biblioteka JavaScript służąca do budowy dynamicznych interfejsów użytkownika. Dzięki komponentowej strukturze ułatwia rozwijanie i utrzymanie dużych aplikacji frontendowych.",
+    name: "React",
+    title: "Biblioteka UI stworzona przez Meta",
+  },
+  {
+    quote:
+      "Tailwind CSS to utility-first framework CSS, który pozwala szybko i efektywnie tworzyć estetyczne interfejsy bez konieczności pisania własnego kodu CSS.",
+    name: "Tailwind CSS",
+    title: "Framework do szybkiego stylowania",
+  },
+  {
+    quote:
+      "Three.js umożliwia tworzenie zaawansowanej grafiki 3D w przeglądarce internetowej z wykorzystaniem WebGL. To idealne rozwiązanie do budowy interaktywnych wizualizacji i efektownych animacji 3D.",
+    name: "Three.js",
+    title: "Biblioteka JavaScript do grafiki 3D",
   },
 ];
