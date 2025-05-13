@@ -36,14 +36,14 @@ const Hero = () => {
           </h2>
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            words="Transforming Coneptes into Seamless Experiences"
+            words="Przekształcam koncepcje w płynne doświadczenia"
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, I&apos;m Sebastian
+            Cześć, jestem Sebastian, programista stron internetowych
           </p>
           <a href="#about" title="button-hero">
             <MagicButton
-              title="Show my work"
+              title="Zobacz moje prace"
               icon={<FaLocationArrow />}
               position="right"
             />
