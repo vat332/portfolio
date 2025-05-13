@@ -75,7 +75,13 @@ export const projects = [
     title: "Issue Tracker",
     des: "Issue Tracker to aplikacja do zarządzania problemami w projektach. Umożliwia przeglądanie, tworzenie i zarządzanie problemami w projekcie.",
     img: "/p1.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    iconLists: [
+      "/vercel.svg",
+      "/vite.svg",
+      "/ts.svg",
+      "/tail.svg",
+      "/next.svg",
+    ],
     link: "https://issue-tracker-ten-psi.vercel.app/",
   },
   {
@@ -83,7 +89,13 @@ export const projects = [
     title: "Interaktywna strona z grami GameHub",
     des: "Game Hub to aplikacja internetowa, która pozwala użytkownikom przeglądać informacje o grach, w tym zrzuty ekranu, zwiastuny, oceny krytyków i wiele więcej.",
     img: "/p2.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    iconLists: [
+      "/re.svg",
+      "/vercel.svg",
+      "/vite.svg",
+      "/ts.svg",
+      "/chakra.svg",
+    ],
     link: "https://game-hub-nine-dun-57.vercel.app/",
   },
   {
@@ -151,13 +163,11 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/vat332",
   },
   {
     id: 2,
-    img: "/twit.svg",
-  },
-  {
-    id: 3,
-    img: "/link.svg",
+    img: "/linkedin.svg",
+    link: "https://www.linkedin.com/in/sebastian-murawski332/",
   },
 ];
