@@ -121,3 +121,27 @@ export const technologies = [
     title: "Biblioteka JavaScript do grafiki 3D",
   },
 ];
+
+export const workExperience = [
+  {
+    id: 1,
+    title: "Stażysta – Sprint S.A.",
+    desc: "Refaktoryzacja kodu aplikacji webowych (Vue.js, PHP Symfony), tworzenie nowych funkcjonalności oraz testowanie ich za pomocą testów jednostkowych. Współpraca z zespołem frontendowym. Realizacja produkcji zgodnie z dokumentacją techniczną i normami jakości.",
+    className: "md:col-span-2",
+    thumbnail: "/exp1.svg",
+  },
+  {
+    id: 2,
+    title: "Pracownik serwisu komputerowego System Plus S.A. – Ciechanów",
+    desc: "Obsługa klientów, doradzanie w wyborze produktów, dbanie o pozytywne doświadczenia zakupowe oraz wykonywanie prac fizycznych zgodnie z procedurami bezpieczeństwa.",
+    className: "md:col-span-2",
+    thumbnail: "/exp2.svg",
+  },
+  {
+    id: 3,
+    title: "Stażysta w firmie komputerowej COMA S.A.",
+    desc: "Obsługa klientów, doradztwo, dbanie o porządek, wykonywanie prac fizycznych zgodnie z procedurami bezpieczeństwa i jakością.",
+    className: "md:col-span-2",
+    thumbnail: "/exp4.svg",
+  },
+];
