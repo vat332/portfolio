@@ -60,3 +60,30 @@ export const gridItems = [
     spareImg: "",
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Issue Tracker",
+    des: "Issue Tracker to aplikacja do zarządzania problemami w projektach. Umożliwia przeglądanie, tworzenie i zarządzanie problemami w projekcie.",
+    img: "/p2.svg",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    link: "https://issue-tracker-ten-psi.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "Interaktywna strona z grami GameHub",
+    des: "Game Hub to aplikacja internetowa, która pozwala użytkownikom przeglądać informacje o grach, w tym zrzuty ekranu, zwiastuny, oceny krytyków i wiele więcej.",
+    img: "/p3.svg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    link: "https://game-hub-nine-dun-57.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Animowana strona internetowa na wzór Apple",
+    des: "Odtworzyłem stronę internetową iPhone’a 15 Pro firmy Apple, łącząc animacje GSAP z efektami 3D przy użyciu Three.js.",
+    img: "/p4.svg",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    link: "https://apple-website-ten-olive.vercel.app/",
+  },
+];
