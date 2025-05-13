@@ -1,5 +1,4 @@
 export const navItems = [
-  { name: "O mnie!", link: "#about" },
   { name: "Projekty", link: "#projects" },
   { name: "Technologie", link: "#technologies" },
   { name: "Doświadczenie", link: "#experience" },
@@ -145,5 +144,20 @@ export const workExperience = [
     desc: "Obsługa klientów, doradztwo, dbanie o porządek, wykonywanie prac fizycznych zgodnie z procedurami bezpieczeństwa i jakością.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
+  },
+];
+
+export const socialMedia = [
+  {
+    id: 1,
+    img: "/git.svg",
+  },
+  {
+    id: 2,
+    img: "/twit.svg",
+  },
+  {
+    id: 3,
+    img: "/link.svg",
   },
 ];
