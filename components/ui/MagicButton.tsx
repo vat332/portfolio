@@ -6,13 +6,7 @@ interface Props {
   otherClasses?: string;
 }
 
-const MagicButton = ({
-  title,
-  icon,
-  position,
-  handleClick,
-  otherClasses,
-}: Props) => {
+const MagicButton = ({ title, icon, position, otherClasses }: Props) => {
   return (
     <button className="relative w-full inline-flex h-12 overflow-hidden rounded-lg p-[1px] focus:outline-none md:w-60 md:mt-10">
       <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />

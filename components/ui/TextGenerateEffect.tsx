@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { cn } from "@/utils/cn";
 import { motion, stagger, useAnimate } from "motion/react";

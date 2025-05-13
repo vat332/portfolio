@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { socialMedia } from "@/data";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
@@ -38,7 +39,7 @@ const Footer = () => {
               <a href={profile.link} target="_blank" rel="noreferrer">
                 <img
                   src={profile.img}
-                  alt={profile.id}
+                  alt={profile.link}
                   width={20}
                   height={20}
                 />

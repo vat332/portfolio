@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { projects } from "@/data";
 import { FaLocationArrow } from "react-icons/fa6";
 import { PinContainer } from "./ui/PinContainer";
