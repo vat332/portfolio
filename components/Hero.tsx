@@ -23,8 +23,8 @@ const Hero = () => {
           className={cn(
             "absolute inset-0",
             "[background-size:100px_100px]",
-            "[background-image:linear-gradient(to_right,#e4e4e7_0.1px,transparent_0.55px),linear-gradient(to_bottom,#e4e4e7_0.1px,transparent_0.55px)]",
-            "white:[background-image:linear-gradient(to_right,#262626_0.1px,transparent_0.6px),linear-gradient(to_bottom,#262626_0.1px,transparent_0.6px)]"
+            "dark:[background-image:linear-gradient(to_right,#e4e4e7_0.1px,transparent_0.55px),linear-gradient(to_bottom,#e4e4e7_0.1px,transparent_0.55px)]",
+            "[background-image:linear-gradient(to_right,#262626_0.1px,transparent_0.6px),linear-gradient(to_bottom,#262626_0.1px,transparent_0.6px)]"
           )}
         />
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100" />
