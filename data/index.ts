@@ -106,6 +106,14 @@ export const projects = [
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://apple-website-ten-olive.vercel.app/",
   },
+  {
+    id: 4,
+    title: "Przykładowa strona internetowa dla fimry Hostingowej",
+    des: "Responsywna oraz nowczesna strona dla firmy.",
+    img: "/p4.png",
+    iconLists: ["/tail.svg", "/ts.svg", "/vercel.svg", "/vite.svg"],
+    link: "https://website-khaki-nu.vercel.app/",
+  },
 ];
 
 export const technologies = [
