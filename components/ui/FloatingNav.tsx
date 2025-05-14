@@ -76,7 +76,7 @@ export const FloatingNav = ({
           >
             <span className="block sm:hidden">{navItem.icon}</span>
 
-            <span className="text-xs !cursor-pointer md:text-xl">
+            <span className="text-xs !cursor-pointer md:text-xl ">
               {navItem.name}
             </span>
           </Link>
