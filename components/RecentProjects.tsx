@@ -10,7 +10,7 @@ const RecentProjects = () => {
         Kilka najnowszych <span className="text-purple-300">projektów</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-        {projects.map(({ title, id, des, img, iconLists, link }) => (
+        {projects.map(({ title, id, des, img, iconLists, link, github }) => (
           <div
             key={id}
             className="sm:h-[41rem] lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] "
@@ -29,9 +29,12 @@ const RecentProjects = () => {
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
                 {title}
               </h1>
-              <p className="lg:text-xl lg:font-normal font-light font-sm line-clamp-2">
+              <p className="lg:text-xl lg:font-normal font-light font-sm line-clamp-2 my-2">
                 {des}
               </p>
+              <a href={github} className="hover:text-purple-300">
+                {github}
+              </a>
               <div className="flex items-center justify-between mt-7 mb-3">
                 <div className="flex items-center">
                   {iconLists.map((icon, index) => (

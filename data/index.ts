@@ -83,6 +83,7 @@ export const projects = [
       "/next.svg",
     ],
     link: "https://issue-tracker-ten-psi.vercel.app/",
+    github: "https://github.com/vat332/issue-tracker",
   },
   {
     id: 2,
@@ -97,6 +98,7 @@ export const projects = [
       "/chakra.svg",
     ],
     link: "https://game-hub-nine-dun-57.vercel.app/",
+    github: "https://github.com/vat332/game-hub-site",
   },
   {
     id: 3,
@@ -105,6 +107,7 @@ export const projects = [
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://apple-website-ten-olive.vercel.app/",
+    github: "https://github.com/vat332/apple_website",
   },
   {
     id: 4,
@@ -113,6 +116,16 @@ export const projects = [
     img: "/p4.png",
     iconLists: ["/tail.svg", "/ts.svg", "/vercel.svg", "/vite.svg"],
     link: "https://website-khaki-nu.vercel.app/",
+    github: "https://github.com/vat332/website",
+  },
+  {
+    id: 5,
+    title: "Chef Claude - Przepisy kulinarne",
+    des: "Aplikacja Chef Claude pozwala użytkownikowi wprowadzić listę składników, a następnie generuje propozycję przepisu na podstawie tych składników, korzystając z AI.",
+    img: "/p5.png",
+    iconLists: ["/tail.svg", "/vercel.svg", "/vite.svg"],
+    link: "https://aplikacja-do-proponowania-potraw.vercel.app/",
+    github: "https://github.com/vat332/aplikacja-do-proponowania-potraw",
   },
 ];
 
