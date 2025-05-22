@@ -127,6 +127,15 @@ export const projects = [
     link: "https://aplikacja-do-proponowania-potraw.vercel.app/",
     github: "https://github.com/vat332/aplikacja-do-proponowania-potraw",
   },
+  {
+    id: 6,
+    title: "Wisielec",
+    des: "Wisielec to klasyczna gra słowna, w której zgadujesz ukryte słowo, wybierając litery alfabetu. Masz ograniczoną liczbę prób – każda błędna litera przybliża Cię do przegranej. W tej wersji każda pomyłka 'eliminuje' jeden z języków programowania.",
+    img: "/p6.png",
+    iconLists: ["/tail.svg", "/vercel.svg", "/vite.svg", "/re.svg"],
+    link: "https://wisielec-livid.vercel.app/",
+    github: "https://github.com/vat332/wisielec",
+  },
 ];
 
 export const technologies = [
