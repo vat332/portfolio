@@ -9,11 +9,11 @@ const RecentProjects = () => {
       <h1 className="heading">
         Kilka najnowszych <span className="text-purple-300">projektów</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 md:gap-x-12 md:gap-y-1 gap-y-14 mt-10">
         {projects.map(({ title, id, des, img, iconLists, link, github }) => (
           <div
             key={id}
-            className="sm:h-[41rem] lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] "
+            className="sm:h-[40rem] lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] "
           >
             <PinContainer title={link} href={link}>
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
