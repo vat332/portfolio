@@ -12,7 +12,7 @@ const calculateDuration = (start: string, end: string | null) => {
   const years = Math.floor(months / 12);
   const remainingMonths = months % 12;
   
-  let result = [];
+  const result: string[] = [];
   if (years > 0) {
     const yearWord = years === 1 ? 'rok' : (years >= 2 && years <= 4) ? 'lata' : 'lat';
     result.push(`${years} ${yearWord}`);
@@ -38,7 +38,7 @@ const Experience = () => {
         Moje <span className="text-purple-300">doświadczenie</span>
       </h1>
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
-        {workExperience.map((card: any) => (
+        {workExperience.map((card: { id: number; title: string; desc: string; thumbnail: string; startDate: string; endDate: string | null }) => (
           <Button
             key={card.id}
             borderRadius="1.75rem"

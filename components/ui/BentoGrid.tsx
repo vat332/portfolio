@@ -1,17 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { createPortal } from "react-dom";
-import { IoCopyOutline } from "react-icons/io5";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCopy, FaCheck } from "react-icons/fa6";
 
-import dynamic from "next/dynamic";
 import ReactConfetti from "react-confetti";
-
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
-import MagicButton from "./MagicButton";
 
 const CONTACT_ITEMS = [
   {
