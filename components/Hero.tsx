@@ -1,5 +1,5 @@
 import { cn } from "@/utils/cn";
-import { FaLocationArrow } from "react-icons/fa6";
+import { FaLocationArrow, FaDownload } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
@@ -41,13 +41,22 @@ const Hero = () => {
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Cześć, jestem Sebastian, programista stron internetowych
           </p>
-          <a href="#about" title="button-hero">
-            <MagicButton
-              title="Zobacz moje prace"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <a href="#projects" title="button-hero">
+              <MagicButton
+                title="Zobacz moje prace"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </a>
+            <a href="/cv.pdf" download title="button-cv">
+              <MagicButton
+                title="Pobierz CV"
+                icon={<FaDownload />}
+                position="left"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

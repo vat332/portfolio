@@ -2,6 +2,35 @@
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
 
+const calculateDuration = (start: string, end: string | null) => {
+  const startDate = new Date(start);
+  const endDate = end ? new Date(end) : new Date();
+  
+  const totalMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+  const months = Math.max(1, totalMonths); // Minimum 1 miesiąc
+
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+  
+  let result = [];
+  if (years > 0) {
+    const yearWord = years === 1 ? 'rok' : (years >= 2 && years <= 4) ? 'lata' : 'lat';
+    result.push(`${years} ${yearWord}`);
+  }
+  if (remainingMonths > 0) {
+    const monthWord = remainingMonths === 1 ? 'miesiąc' : (remainingMonths >= 2 && remainingMonths <= 4) ? 'miesiące' : 'miesięcy';
+    result.push(`${remainingMonths} ${monthWord}`);
+  }
+  
+  return result.join(" ");
+};
+
+const formatDate = (dateStr: string) => {
+  const date = new Date(dateStr);
+  const formatted = date.toLocaleDateString('pl-PL', { month: 'long', year: 'numeric' });
+  return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+};
+
 const Experience = () => {
   return (
     <div className="py-20" id="experience">
@@ -9,7 +38,7 @@ const Experience = () => {
         Moje <span className="text-purple-300">doświadczenie</span>
       </h1>
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
-        {workExperience.map((card) => (
+        {workExperience.map((card: any) => (
           <Button
             key={card.id}
             borderRadius="1.75rem"
@@ -26,6 +55,12 @@ const Experience = () => {
                 <h1 className="text-start text-xl md:text-2xl font-bold ">
                   {card.title}
                 </h1>
+                <div className="text-start text-purple-200 text-sm md:text-base font-medium mt-1">
+                  {formatDate(card.startDate)} – {card.endDate ? formatDate(card.endDate) : "Obecnie"}
+                  <span className="ml-2 text-slate-400 font-normal">
+                    ({calculateDuration(card.startDate, card.endDate)})
+                  </span>
+                </div>
                 <p className="text-start text-white-100 mt-3 font-semibold">
                   {card.desc}
                 </p>

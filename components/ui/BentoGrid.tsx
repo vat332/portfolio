@@ -1,18 +1,40 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { IoCopyOutline } from "react-icons/io5";
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCopy, FaCheck } from "react-icons/fa6";
 
 import dynamic from "next/dynamic";
-
-const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
+import ReactConfetti from "react-confetti";
 
 import { cn } from "@/utils/cn";
-
-import animationData from "@/data/confetti.json";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import MagicButton from "./MagicButton";
+
+const CONTACT_ITEMS = [
+  {
+    label: "Email",
+    value: "sebastian.murawski0110@gmail.com",
+    icon: <FaEnvelope className="w-4 h-4" />,
+  },
+  {
+    label: "Telefon",
+    value: "+48 123 456 789",
+    icon: <FaPhone className="w-4 h-4" />,
+  },
+  {
+    label: "LinkedIn",
+    value: "sebastian-murawski332",
+    icon: <FaLinkedin className="w-4 h-4" />,
+  },
+  {
+    label: "GitHub",
+    value: "vat332",
+    icon: <FaGithub className="w-4 h-4" />,
+  },
+];
 
 export const BentoGrid = ({
   className,
@@ -55,22 +77,25 @@ export const BentoGridItem = ({
   const leftLists = ["ReactJS", "NextJS", "Typescript"];
   const rightLists = ["Python", "Django", "MySQL"];
 
-  const [copied, setCopied] = useState(false);
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [snackbar, setSnackbar] = useState<string | null>(null);
 
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  const handleCopy = useCallback(async (value: string, index: number) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedIndex(index);
+      setSnackbar(`Skopiowano: ${value}`);
+      setShowConfetti(true);
 
-  const handleCopy = () => {
-    const text = "sebastian.murawski0110@gmail.com";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-  };
+      setTimeout(() => setCopiedIndex(null), 2000);
+      setTimeout(() => setSnackbar(null), 3000);
+      setTimeout(() => setShowConfetti(false), 4000);
+    } catch {
+      setSnackbar("Nie udało się skopiować");
+      setTimeout(() => setSnackbar(null), 3000);
+    }
+  }, []);
 
   return (
     <div
@@ -123,7 +148,7 @@ export const BentoGridItem = ({
             {description}
           </div>
           <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10 ${id === 6 ? "mb-6" : ""}`}
           >
             {title}
           </div>
@@ -157,22 +182,72 @@ export const BentoGridItem = ({
             </div>
           )}
           {id === 6 && (
-            <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${
-                  copied ? "block" : "block"
-                }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
+            <div className="mt-5 relative z-50">
+              {/* Confetti */}
+              {showConfetti && typeof document !== "undefined"
+                ? createPortal(
+                    <ReactConfetti
+                      width={window.innerWidth}
+                      height={window.innerHeight}
+                      recycle={false}
+                      numberOfPieces={200}
+                      gravity={0.3}
+                      style={{ position: "fixed", top: 0, left: 0, zIndex: 9999, pointerEvents: "none" }}
+                    />,
+                    document.body
+                  )
+                : null}
 
-              <MagicButton
-                title={copied ? "Email skopiowany!" : "Skopiuj mój adres email"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
+              {/* Snackbar */}
+              {typeof document !== "undefined"
+                ? createPortal(
+                    <div
+                      className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-[10000] transition-all duration-300 ${
+                        snackbar
+                          ? "opacity-100 translate-y-0"
+                          : "opacity-0 translate-y-4 pointer-events-none"
+                      }`}
+                    >
+                      <div className="px-6 py-3 rounded-xl bg-[#10132E] border border-purple-500/30 shadow-lg shadow-purple-500/10 backdrop-blur-lg">
+                        <p className="text-sm font-medium text-white flex items-center gap-2">
+                          <FaCheck className="text-emerald-400 w-4 h-4" />
+                          {snackbar}
+                        </p>
+                      </div>
+                    </div>,
+                    document.body
+                  )
+                : null}
+
+              {/* Contact Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+                {CONTACT_ITEMS.map((item, index) => (
+                  <button
+                    key={item.label}
+                    onClick={() => handleCopy(item.value, index)}
+                    className="group relative flex items-center gap-3 p-3 rounded-xl bg-[#0c0e23]/80 border border-white/[0.08] hover:border-purple-500/30 transition-all duration-300 cursor-pointer text-left"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center text-purple-300 group-hover:text-purple-200 transition-colors">
+                      {item.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[10px] text-slate-500 uppercase tracking-wider font-medium">
+                        {item.label}
+                      </p>
+                      <p className="text-xs text-white truncate mt-0.5">
+                        {item.value}
+                      </p>
+                    </div>
+                    <div className="flex-shrink-0 text-slate-500 group-hover:text-purple-300 transition-colors">
+                      {copiedIndex === index ? (
+                        <FaCheck className="w-3 h-3 text-emerald-400" />
+                      ) : (
+                        <FaCopy className="w-3 h-3" />
+                      )}
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           )}
         </div>

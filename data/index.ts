@@ -71,9 +71,42 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 7,
+    type: "split" as const,
+    title: "Kalkulator paliwa & Inwestor CS2",
+    des: "",
+    img: "",
+    iconLists: [],
+    link: "",
+    github: "",
+    subProjects: [
+      {
+        title: "Kalkulator paliwa",
+        des: "Moduł do śledzenia kosztów LPG vs benzyna, rozliczeń między kierowcami i tras — z dashboardem, wykresami zużycia i generowaniem PDF.",
+        images: ["/paliwo.png", "/tankowania.png"],
+        iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/vercel.svg"],
+        link: "https://investor-cs-2-jw3v.vercel.app/?tab=fuel",
+        github: "",
+        accentColor: "cyan",
+      },
+      {
+        title: "Inwestor CS2",
+        des: "Platforma do analizy inwestycji CS2 — dashboard portfela, synchronizacja ze Steam API, alerty cenowe, dziennik transakcji i wskaźniki RSI/SMA.",
+        images: ["/DashboardInwestcji.png", "/DziennikInwestcji.png", "/Statystyki.png"],
+        iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/vercel.svg"],
+        link: "https://investor-cs-2-jw3v.vercel.app/",
+        github: "",
+        accentColor: "purple",
+      },
+    ],
+  },
+  {
     id: 1,
+    type: "standard" as const,
     title: "Issue Tracker",
     des: "Issue Tracker to aplikacja do zarządzania problemami w projektach. Umożliwia przeglądanie, tworzenie i zarządzanie problemami w projekcie.",
+    longDes: "Issue Tracker to zaawansowana aplikacja do zarządzania problemami w projektach, zainspirowana systemami takimi jak Jira czy GitHub Issues.\n\nPozwala na kompleksowe śledzenie błędów, przydzielanie zadań członkom zespołu oraz monitorowanie postępów pracy. Aplikacja posiada intuicyjny dashboard, filtry ułatwiające wyszukiwanie konkretnych zgłoszeń oraz wsparcie dla precyzyjnego opisywania problemów.\n\nZbudowana z wykorzystaniem nowoczesnego stacku technologicznego, gwarantuje wysoką wydajność i doskonałe doświadczenie użytkownika.",
+    images: ["/p1.png"],
     img: "/p1.png",
     iconLists: [
       "/vercel.svg",
@@ -87,8 +120,11 @@ export const projects = [
   },
   {
     id: 2,
+    type: "standard" as const,
     title: "Interaktywna strona z grami GameHub",
     des: "Game Hub to aplikacja internetowa, która pozwala użytkownikom przeglądać informacje o grach, w tym zrzuty ekranu, zwiastuny, oceny krytyków i wiele więcej.",
+    longDes: "Game Hub to interaktywna aplikacja internetowa, która pozwala użytkownikom na odkrywanie i przeglądanie bogatej biblioteki gier wideo.\n\nAplikacja oferuje zaawansowane opcje filtrowania i sortowania według gatunków, platform czy ocen krytyków (Metacritic). Użytkownicy mogą przeglądać szczegółowe informacje o każdym tytule, w tym wysokiej jakości zrzuty ekranu, oficjalne zwiastuny oraz statystyki.\n\nZoptymalizowana pod kątem szybkości działania, z wykorzystaniem m.in. nieskończonego scrollowania (infinite scrolling) dla bezproblemowego przeglądania setek tytułów.",
+    images: ["/p2.png"],
     img: "/p2.png",
     iconLists: [
       "/re.svg",
@@ -102,6 +138,7 @@ export const projects = [
   },
   {
     id: 3,
+    type: "standard" as const,
     title: "Animowana strona internetowa na wzór Apple",
     des: "Odtworzyłem stronę internetową iPhone’a 15 Pro firmy Apple, łącząc animacje GSAP z efektami 3D przy użyciu Three.js.",
     img: "/p4.svg",
@@ -111,6 +148,7 @@ export const projects = [
   },
   {
     id: 4,
+    type: "standard" as const,
     title: "Przykładowa strona internetowa dla fimry Hostingowej",
     des: "Responsywna oraz nowczesna strona dla firmy.",
     img: "/p4.png",
@@ -120,6 +158,7 @@ export const projects = [
   },
   {
     id: 5,
+    type: "standard" as const,
     title: "Chef Claude - Przepisy kulinarne",
     des: "Aplikacja Chef Claude pozwala użytkownikowi wprowadzić listę składników, a następnie generuje propozycję przepisu na podstawie tych składników, korzystając z AI.",
     img: "/p5.png",
@@ -129,6 +168,7 @@ export const projects = [
   },
   {
     id: 6,
+    type: "standard" as const,
     title: "Wisielec",
     des: "Wisielec to klasyczna gra słowna, w której zgadujesz ukryte słowo, wybierając litery alfabetu. Masz ograniczoną liczbę prób – każda błędna litera przybliża Cię do przegranej. W tej wersji każda pomyłka 'eliminuje' jeden z języków programowania.",
     img: "/p6.png",
@@ -168,24 +208,39 @@ export const technologies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Stażysta – Sprint S.A.",
-    desc: "Refaktoryzacja kodu aplikacji webowych (Vue.js, PHP Symfony), tworzenie nowych funkcjonalności oraz testowanie ich za pomocą testów jednostkowych. Współpraca z zespołem frontendowym. Realizacja produkcji zgodnie z dokumentacją techniczną i normami jakości.",
+    title: "Fullstack Developer – CWS Sp. z o.o.",
+    desc: "Projektowanie i rozwój systemu WMS wspierającego planowanie i budowę sieci światłowodowych. Backend: Java 21, 25, Spring Boot 3.x, 4.x, Spring 6, 7, testy w Mockito. Frontend: Lit (TypeScript), Vite, Vitest. Infrastruktura i narzędzia: Docker, Postgres/PostGIS, Grafana oraz integracja z Mapbox.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
+    startDate: "2025-06-01",
+    endDate: null, // Obecnie
   },
   {
     id: 2,
-    title: "Pracownik serwisu komputerowego System Plus S.A. – Ciechanów",
-    desc: "Obsługa klientów, doradzanie w wyborze produktów, dbanie o pozytywne doświadczenia zakupowe oraz wykonywanie prac fizycznych zgodnie z procedurami bezpieczeństwa.",
+    title: "Stażysta – Sprint S.A.",
+    desc: "Refaktoryzacja kodu aplikacji webowych (Vue.js, PHP Symfony), tworzenie nowych funkcjonalności oraz testowanie ich za pomocą testów jednostkowych. Współpraca z zespołem frontendowym.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
+    startDate: "2024-07-01",
+    endDate: "2024-09-30",
   },
   {
     id: 3,
-    title: "Stażysta w firmie komputerowej COMA S.A.",
-    desc: "Obsługa klientów, doradztwo, dbanie o porządek, wykonywanie prac fizycznych zgodnie z procedurami bezpieczeństwa i jakością.",
+    title: "Pracownik serwisu komputerowego System Plus S.A.",
+    desc: "Obsługa klientów, doradztwo techniczne, serwis sprzętu komputerowego oraz dbanie o pozytywne doświadczenia zakupowe.",
+    className: "md:col-span-2",
+    thumbnail: "/exp3.svg",
+    startDate: "2023-01-01",
+    endDate: "2024-06-30",
+  },
+  {
+    id: 4,
+    title: "Stażysta – COMA S.A.",
+    desc: "Obsługa klientów, doradztwo techniczne oraz wsparcie w bieżących pracach serwisowych i porządkowych zgodnie z procedurami jakości.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
+    startDate: "2022-06-01",
+    endDate: "2022-08-31",
   },
 ];
 
